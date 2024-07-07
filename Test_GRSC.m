@@ -2,8 +2,8 @@ clear all
 clc
 
 
-train_path = 'data\';
-test_path = '';
+train_path = 'traindata\';
+test_path = 'testdata\';
 
 
 File_train = dir(strcat(train_path,'*.tif')); 
@@ -18,9 +18,9 @@ disp(Length_Names_test)
 %% 
 
 
-image_size_h=*;
-image_size_w=*;
-image_size_c=*;
+image_size_h=512;
+image_size_w=512;
+image_size_c=1;
 %% 
 
 
@@ -29,7 +29,7 @@ sys_noise=Sigma*randn(image_size_h,image_size_w,image_size_c);
 
 estimated_noise=zeros(size(sys_noise));
 Sys_noise_est_sum=zeros(size(sys_noise));
-for k = 8 :Length_Names_train 
+for k = 1 :Length_Names_train 
     disp(k)
     image_name = File_train(k).name;
     img_orig=double(imread(strcat(train_path,image_name)));

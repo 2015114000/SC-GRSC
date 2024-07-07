@@ -2,8 +2,8 @@ clear all
 clc
 
 %% 
-train_path = 'data\';
-test_path = '';
+train_path = 'traindata\';
+test_path = 'testdata\';
 
 File_train = dir(strcat(train_path,'*.tif')); 
 Length_Names_train = length(File_train);
@@ -16,9 +16,9 @@ disp(Length_Names_test)
 
 
 %% 
-image_size_h=*;
-image_size_w=*;
-image_size_c=*;
+image_size_h=512;
+image_size_w=512;
+image_size_c=1;
 
 %% 
 Sigma=65; %system noise level

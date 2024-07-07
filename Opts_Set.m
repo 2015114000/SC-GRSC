@@ -4,7 +4,7 @@ function  Opts   =    Opts_Set( nSig )
 
 Opts.nSig      =   nSig;
 
-Opts.Iter      =   7;
+Opts.Iter      =   10;
 
 Opts.eps       =   0.2;
 
