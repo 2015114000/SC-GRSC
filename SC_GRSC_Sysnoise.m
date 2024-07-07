@@ -46,14 +46,8 @@ for iter = 1 : Opts.Iter
            A             =      X(:, NL_mat(:, i));
            A_Nim=X0(:, NL_mat(:, i),nn);
 
-           K_rec=similar_matrix(A,Opts);
 
-           [SA,~] = scaling_sp(K_rec,1e-1); % Fast Sinkhorn Algorithm to get diag(C^{-1/2})
-           SA(isnan(SA))=0;
-           Kernell = sparse(1:m, 1:m, SA, m, m, numel(SA)); clear SA; % Diagonal matrix C^{-1/2}
-           K_rec = Kernell*K_rec*Kernell; % Creating Filtering matrix   
-           NL_A_NEW =A*K_rec;   
-           TMP_NEW            =      GRSC( double(A), double(NL_A_NEW), Opts.c1, Opts.nSig, Opts.eps,double(A_Nim));
+           TMP_NEW            =      GRSC( double(A), Opts.c1, Opts.nSig, Opts.eps,Opts.hp,double(A_Nim));
            Ys_NEW(:, NL_mat(1:m,i))    =   Ys_NEW(:, NL_mat(1:m,i)) + TMP_NEW;
            W(:, NL_mat(1:m,i))     =   W(:, NL_mat(1:m,i)) + 1;
     

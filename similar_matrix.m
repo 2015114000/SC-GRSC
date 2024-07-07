@@ -1,5 +1,5 @@
-function [W]=similar_matrix(img,Opts)
-hp        =   Opts.hp;
+function [W]=similar_matrix(img,hp)
+
 X=img';
 mX        =   sum(X.^2,2)/2;
 [h,w]=size(X);

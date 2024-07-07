@@ -5,19 +5,19 @@ clc
 train_path = 'traindata\';
 test_path = 'testdata\';
 
-File_train = dir(strcat(train_path,'*.tif')); 
+File_train = dir(strcat(train_path,'*.jpg')); 
 Length_Names_train = length(File_train);
 disp(Length_Names_train)
 
 
-File_test = dir(strcat(test_path,'*.tif'));  
+File_test = dir(strcat(test_path,'*.jpg'));  
 Length_Names_test = length(File_test);
 disp(Length_Names_test)
 
 
 %% 
-image_size_h=512;
-image_size_w=512;
+image_size_h=481;
+image_size_w=321;
 image_size_c=1;
 
 %% 
